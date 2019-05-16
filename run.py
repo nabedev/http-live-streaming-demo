@@ -26,7 +26,6 @@ def main():
     start_time = time.time()
     while(vc.isOpened()):
         if time.time() - start_time > CAPTURE_DURATION:
-            # TODO queueを利用する
             segment = generate_segment(video_filepath)
             update_playlist(segment)
 
@@ -61,7 +60,7 @@ def generate_segment(filepath):
     return Segment(
         uri=segment_filepath,
         base_uri='',
-        duration=CAPTURE_DURATION,  # TODO: 実際の長さにする
+        duration=CAPTURE_DURATION,
     )
 
 
